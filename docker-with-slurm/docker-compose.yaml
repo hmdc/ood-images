@@ -19,6 +19,10 @@ services:
     volumes:
       - home:/home
       - ../common/example.yml:/etc/ood/config/clusters.d/example.yml
+      - ../common/nginx_stage.yml:/etc/ood/config/nginx_stage.yml
+      - ../common/logo.png:/var/www/ood/public/logo.png
+      - ../common/logo-alt.png:/var/www/ood/public/logo-alt.png
+      - ../common/logo-sm.png:/var/www/ood/public/logo-sm.png
   head:
     build:
       context: .

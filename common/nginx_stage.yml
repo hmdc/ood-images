@@ -1,0 +1,5 @@
+pun_custom_env:
+  OOD_DASHBOARD_TITLE: "IQSS Open OnDemand"
+  OOD_DASHBOARD_LOGO: "/public/logo-alt.png"
+  OOD_DASHBOARD_HEADER_IMG_LOGO: "/public/logo-sm.png"
+  OOD_BRAND_BG_COLOR: "#3e77bb"

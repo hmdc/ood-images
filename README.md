@@ -13,6 +13,13 @@ This repo contains images in various technologies of the Open OnDemand platform
 
 # Setup
 
+    brew cask install vagrant
     git clone https://github.com/OSC/ood-images.git
     cd ood-images
     vagrant plugin install vagrant-vbguest  # only required once, and is not tied to a particular Vagrant file / directory
+
+# Customization
+
+Edit the files in `common`, e.g. to set environment variables define them in `nginx_stage.yml`.
+
+The Docker containers live-mount these files, so you can edit them on the host filesystem, and then restart the web server from within the OOD Dashboard to pick up the changes.

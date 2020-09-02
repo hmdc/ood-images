@@ -1,0 +1,5 @@
+type: "success"
+msg: |
+  This is a custom Announcemnet in YML.
+  It can be rendered as a "warning", "info", "success" (this), or "danger" alert.
+  And it can contain custom ERB.

@@ -23,6 +23,15 @@ services:
       - ../common/logo.png:/var/www/ood/public/logo.png
       - ../common/logo-alt.png:/var/www/ood/public/logo-alt.png
       - ../common/logo-sm.png:/var/www/ood/public/logo-sm.png
+      # Announcements
+      - ../common/announcement.md:/etc/ood/config/announcements.d/announcement.md
+      - ../common/announcement.yml:/etc/ood/config/announcements.d/announcement.yml
+      # MOTD
+      - ../common/motd.md:/etc/ood/config/motd.md
+      # Job Composer template
+      - ../common/job-template.yml:/etc/ood/config/apps/myjobs/templates/job-template.yml
+      # Custom Error Page for Missing Home Directory
+      - ../common/missing_home_directory.html:/etc/ood/config/pun/html/missing_home_directory.html
   head:
     build:
       context: .

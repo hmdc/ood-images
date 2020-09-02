@@ -1,0 +1,4 @@
+name: Custom Job Template
+host: somehost
+script: the_script.sh
+notes: Notes about the template, such as content and function.

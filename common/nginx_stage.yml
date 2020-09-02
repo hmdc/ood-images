@@ -1,5 +1,55 @@
 pun_custom_env:
-  OOD_DASHBOARD_TITLE: "IQSS Open OnDemand"
+  ## Announcement is in docker-compose.yml
+  # MOTD file is in docker-compose.yml
+  MOTD_PATH: "/etc/ood/config/motd.md"
+  MOTD_FORMAT: "markdown"
+  OOD_DASHBOARD_TITLE: "Custom Dashboard Title"
+  # logo file is in docker-compose.yml
   OOD_DASHBOARD_LOGO: "/public/logo-alt.png"
+  # for favicon
+  OOD_PUBLIC_URL: "http://hmdc.harvard.edu/"
+  OOD_BRAND_BG_COLOR: "#cccccc"
+  OOD_BRAND_LINK_ACTIVE_BG_COLOR: "#ee4455"
+  # replaces custom title with a logo
+  # header logo file is in docker-compose.yml
   OOD_DASHBOARD_HEADER_IMG_LOGO: "/public/logo-sm.png"
-  OOD_BRAND_BG_COLOR: "#3e77bb"
+  # invert navbar text color (default: "inverse" (white text), alt: "default" (black text))
+  OOD_NAVBAR_TYPE: "default"
+  OOD_DASHBOARD_SUPPORT_URL: "https://help.hmdc.harvard.edu/"
+  OOD_DASHBOARD_SUPPORT_EMAIL: "support@help.hmdc.harvard.edu"
+  OOD_DASHBOARD_DOCS_URL: "https://rce-docs.hmdc.harvard.edu/"
+  OOD_DASHBOARD_DEV_DOCS_URL: "https://wiki.harvard.edu/confluence/display/HMDC/Open+OnDemand"
+  OOD_DASHBOARD_PASSWD_URL: "https://accounts.hmdc.harvard.edu/"
+  OOD_DASHBOARD_HELP_CUSTOM_URL: "https://dss.iq.harvard.edu/"
+  ## (omitted) additional file browser paths can be configured in /etc/ood/config/apps/dashboard/initializers/ood.rb
+  ## (omitted) paths whitelist is not visible in UI
+  #WHITELIST_PATH: "/home/ood"
+  ## (omitted) default SSH host is not visible when cluster login host is configured in /etc/ood/config/clusters.d/*
+  #DEFAULT_SSHHOST: "127.0.0.1"
+  OOD_SSH_WRAPPER: |
+    /bin/bash -c "echo This is my custom SSH wrapper around \"$@\"; exec /usr/bin/ssh \"$@\""
+  ## (omitted) origin request header check is not visible in UI
+  #OOD_SHELL_ORIGIN_CHECK: "off"
+  ## Job Composer template is in docker-compose.yml
+  OOD_MAX_SCRIPT_SIZE_KB: "100"
+  ## Custom Error Page for Missing Home Directory is in docker-compose.yml
+  ## (omitted) Dashboard Navbar contents can be configured in /etc/ood/config/apps/dashboard/initializers/ood.rb
+  ## (omitted) Text localization can be configured in /var/www/ood/apps/sys/${APP}/config/locales/${LOCALE}.yml
+  DISABLE_SAFARI_BASIC_AUTH_WARNING: "1"
+  ## (omitted) Disk Quota alerting requires configuration of source JSON file
+  #OOD_QUOTA_PATH: "/etc/ood/config/quota.json"
+  #OOD_QUOTA_THRESHOLD: "0.80"
+  ## (omitted) Resource Balance alerting requires configuration of source JSON file
+  #OOD_BALANCE_PATH: "/etc/ood/config/resource_balance.json"
+  #OOD_BALANCE_THRESHOLD: "5"
+  ## (omitted) Maintenance Mode can be configured in /etc/ood/config/ood_portal.yml and /etc/ood/maintenance.enable
+  ## (omitted) Grafana integration requires a Grafana instance, and can be configured in /etc/ood/config/clusters.d/*
+  ## (omitted) Disable Host Link in Batch Connect is not visible in UI without Interactive Apps
+  #OOD_BC_SSH_TO_COMPUTE_NODE: "off"
+  ## (omitted) Illegal Job Name Characters in Batch Connect is not visible in UI without Interactive Apps
+  #OOD_JOB_NAME_ILLEGAL_CHARS: "/)(*&^%$#@!~"
+  ## Cluster Configuration is in docker-compose.yml
+  # App Sharing "significantly changes the interface of the Dashboard. The MOTD moves to the right of the screen and shared apps appear below the welcome logo and text." Shared apps are deployed to /var/www/ood/apps/usr/$USER/gateway/$APPNAME
+  OOD_APP_SHARING: "1"
+  OOD_APP_CATALOG_URL: "https://github.com/hmdc"
+  ## (omitted) App Development can be configured in /etc/ood/config/apps/dashboard/initializers/ood.rb
